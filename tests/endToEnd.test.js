@@ -17,7 +17,7 @@ test.describe('E-commerce Playground E2E Test', () => {
 
     // Step 1: Login
     await loginPage.navigate();
-    await loginPage.login('testuser@example.com', 'password123');
+    await loginPage.login('email', 'password');
 
     // Step 2: Search & Select Product
     await homePage.searchProduct('MacBook');
@@ -26,7 +26,11 @@ test.describe('E-commerce Playground E2E Test', () => {
     await productPage.goToCart();
 
     // Step 3: Proceed to Checkout
+    
     await cartPage.proceedToCheckout();
+
+    await checkoutPage.completeBillingForm();
+    await checkoutPage.selectCountryAndState()
     await checkoutPage.completeCheckout();
 
     // Step 4: Verify Order Confirmation

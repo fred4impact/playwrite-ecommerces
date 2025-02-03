@@ -6,7 +6,7 @@ export default defineConfig({
     browserName: 'chromium',
     headless: false,
     screenshot: 'on',
-    trace: 'on'
+    trace: 'on',
   },
   reporter: [['html', { outputFolder: 'reports' }]]
 });
